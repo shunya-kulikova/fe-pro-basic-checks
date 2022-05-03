@@ -3,7 +3,7 @@
  * @param {string} string
  * @returns {string}
  */
-export const capitalizeString = (string) => string.split(' ').map((word) => `${word.substring(0, 1).toUpperCase()}${word.substring(1)}`).join(' ');
+export const capitalizeString = (string) => string.split(' ').map((word) => `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`).join(' ');
 
 /**
  * Должна быть function declaration
@@ -15,10 +15,10 @@ export function fenceString(string) {
     for (let i = 0; i < string.length; i++) {
         if (string[i] === ' ') {
             newArr.push(string[i]);
-        } else if (i % 2 !== 0) {
-            newArr.push(string[i].toUpperCase());
-        } else if (i % 2 === 0){
+        } else if (i % 2 === 0) {
             newArr.push(string[i].toLowerCase());
+        } else if (i % 2 !== 0){
+            newArr.push(string[i].toUpperCase());
         }
     }
     return newArr.join('')
@@ -52,16 +52,16 @@ export const reducerIf = function (action, string) {
  */
 export const reducerSwitch = (action, string) => {
     switch (action) {
-        case uppercase:
+        case 'uppercase':
             return string.toUpperCase();
             break;
-        case lowercase:
+        case 'lowercase':
             return string.toLowerCase();
             break;
-        case capitalize:
+        case 'capitalize':
             return capitalizeString(string);
             break;
-        case fence:
+        case 'fence':
             return fenceString(string);
             break;
         default:
