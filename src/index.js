@@ -17,7 +17,7 @@ export function fenceString(string) {
             newArr.push(string[i]);
         } else if (i % 2 === 0) {
             newArr.push(string[i].toLowerCase());
-        } else if (i % 2 === 0){
+        } else if (i % 2 !== 0){
             newArr.push(string[i].toUpperCase());
         }
     }
