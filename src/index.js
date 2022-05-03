@@ -15,10 +15,10 @@ export function fenceString(string) {
     for (let i = 0; i < string.length; i++) {
         if (string[i] === ' ') {
             newArr.push(string[i]);
-        } else if (i % 2 === 0) {
-            newArr.push(string[i].toLowerCase());
-        } else if (i % 2 !== 0){
+        } else if (i % 2 !== 0) {
             newArr.push(string[i].toUpperCase());
+        } else if (i % 2 === 0){
+            newArr.push(string[i].toLowerCase());
         }
     }
     return newArr.join('')
